@@ -8,7 +8,7 @@ KronOS currently only targets `x86_64`.
 ## Notes
 ### `x86_64` Target Json File
 This target file is copied and commented here as JSON does not allow comments.
-```json lines
+```json5
 {
   // Target the 'x86_64' architecture, with no particular vendor and running on bare-metal.
   "llvm-target": "x86_64-unknown-none",
