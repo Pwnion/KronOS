@@ -1,0 +1,14 @@
+[package]
+name = "kronos"
+version = "0.1.0"
+authors = ["Aden McCusker <aden.m@null.net>"]
+edition = "2021"
+
+[dependencies]
+uefi = "0.32.0"
+
+# The profile used for `cargo build`.
+[profile.dev]
+
+# The profile used for `cargo build --release`.
+[profile.release]

@@ -1,0 +1,19 @@
+[unstable]
+
+# The core library is distributed with the Rust compiler as a precompiled binary,
+# but our target is not a supported host triple. So we must recompile the core
+# library (and its dependency 'compiler_builtins') for our target.
+build-std = ["core", "compiler_builtins"]
+
+# The rust compiler assumes by default that some memory-related functions such as
+# `memcpy`, `memset` and `memcmp` will be provided by the C library on the system.
+# Since we don't have access to the C library, we need to tell the 'compiler_builtins'
+# library to unmangle its implementations of those functions so they are found by
+# the linker.
+build-std-features = ["compiler-builtins-mem"]
+
+[build]
+target = "x86_64-unknown-uefi"
+
+# Set the default build target to our 'x86_64' custom host triple.
+# target = "x86_64-target.json"
